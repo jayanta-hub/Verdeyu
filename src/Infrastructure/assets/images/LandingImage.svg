@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="337" viewBox="0 0 375 337">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_248" data-name="Rectangle 248" width="375" height="337" transform="translate(0 -1)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(0 1)" clip-path="url(#clip-path)">
+    <g id="Group_48" data-name="Group 48">
+      <rect id="Rectangle_216" data-name="Rectangle 216" width="375" height="326" fill="#eae9f0"/>
+      <circle id="Ellipse_12" data-name="Ellipse 12" cx="17.605" cy="17.605" r="17.605" transform="translate(24.613 68.588)" fill="#ff855d"/>
+      <path id="Path_160" data-name="Path 160" d="M14992.333,554.524s24.306,49.118,132.776,76.74,217.968-85.595,241.365-32.9c1.183,53.433,0,82.83,0,82.83H14992Z" transform="translate(-14992 -344.178)" fill="#485857"/>
+      <rect id="Rectangle_219" data-name="Rectangle 219" width="3.419" height="46.077" transform="translate(31.461 290.937)" fill="#1e2536"/>
+      <rect id="Rectangle_247" data-name="Rectangle 247" width="6.448" height="86.895" transform="translate(357.157 249.605)" fill="#1e2536"/>
+      <path id="Polygon_14" data-name="Polygon 14" d="M15.043,0,30.087,67.012H0Z" transform="translate(18.469 244.438)" fill="#75918e"/>
+      <path id="Polygon_23" data-name="Polygon 23" d="M28.37,0l28.37,126.374H0Z" transform="translate(332.656 161.917)" fill="#75918e"/>
+      <path id="Path_161" data-name="Path 161" d="M13480.585,1108.638s4.165-10.469,13.389-7.755c14.448-15.166,28.991-2.214,28.991-2.214s27.258-4.182,38.636,9.969C13538.355,1108.55,13480.585,1108.638,13480.585,1108.638Z" transform="translate(-13329.874 -1067.517)" fill="#d1cfe0"/>
+      <path id="Path_168" data-name="Path 168" d="M13480.585,1112.571s12.65-20.593,24.273-17.174c18.207-19.111,36.241,0,36.241,0s27.234-.658,41.572,17.174C13553.381,1112.46,13480.585,1112.571,13480.585,1112.571Z" transform="translate(-13462.117 -1001.712)" fill="#b7b3cc"/>
+      <path id="Path_163" data-name="Path 163" d="M13480.585,1106.681s4.831-8.724,11.546-6.749c10.516-11.039,20.6-.777,20.6-.777s18.539-2.774,26.822,7.526C13522.635,1106.617,13480.585,1106.681,13480.585,1106.681Z" transform="translate(-13216.455 -1026.229)" fill="#d1cfe0"/>
+      <path id="Path_162" data-name="Path 162" d="M13480.585,1112.571s12.65-20.593,24.273-17.174c18.207-19.111,36.241,0,36.241,0s27.234-.658,41.572,17.174C13553.381,1112.46,13480.585,1112.571,13480.585,1112.571Z" transform="translate(-13462.117 -1003.875)" fill="#d1cfe0"/>
+      <g id="Group_47" data-name="Group 47" transform="translate(30.284 -91.312)">
+        <rect id="Rectangle_246" data-name="Rectangle 246" width="9.123" height="140.497" transform="translate(141.546 287.393)" fill="#262467"/>
+        <path id="Polygon_17" data-name="Polygon 17" d="M24.634,0,49.269,25.066H0Z" transform="matrix(-0.695, 0.719, -0.719, -0.695, 200.155, 262.725)" fill="#262467"/>
+        <path id="Path_177" data-name="Path 177" d="M1.014,0,25.648,25.066H0Z" transform="matrix(-0.695, 0.719, -0.719, -0.695, 183.747, 279.717)" fill="#fc865f"/>
+        <path id="Polygon_19" data-name="Polygon 19" d="M24.633,0,49.265,25.545H0Z" transform="translate(196.285 307.465) rotate(180)" fill="#262467"/>
+        <path id="Path_179" data-name="Path 179" d="M1.031-.482l24.6,25.549H0Z" transform="translate(172.654 306.985) rotate(180)" fill="#ffc9b7"/>
+        <path id="Polygon_20" data-name="Polygon 20" d="M24.634,0,49.269,25.066H0Z" transform="translate(90.752 299.888) rotate(-45)" fill="#262467"/>
+        <path id="Path_180" data-name="Path 180" d="M3.389,0,28.024,25.066,0,25.041Z" transform="translate(105.774 284.865) rotate(-45)" fill="#fc865f"/>
+        <path id="Polygon_21" data-name="Polygon 21" d="M24.633,0,49.265,25.545H0Z" transform="translate(119.65 333.009) rotate(-90)" fill="#262467"/>
+        <path id="Path_181" data-name="Path 181" d="M0,0,24.634,25.066H1.3Z" transform="translate(119.482 308.042) rotate(-90)" fill="#ffc9b7"/>
+        <path id="Polygon_22" data-name="Polygon 22" d="M24.634,0,49.269,25.066H0Z" transform="matrix(-0.719, -0.695, 0.695, -0.719, 164.079, 336.076)" fill="#262467"/>
+        <path id="Path_182" data-name="Path 182" d="M0,0,24.634,25.066.515,25.008Z" transform="matrix(-0.719, -0.695, 0.695, -0.719, 146.358, 318.963)" fill="#fc865f"/>
+        <path id="Polygon_15" data-name="Polygon 15" d="M22.681,0,45.362,23.521H0Z" transform="translate(169.724 232.781) rotate(90)" fill="#262467"/>
+        <path id="Path_174" data-name="Path 174" d="M0,0,22.674,23.48H0Z" transform="translate(169.587 255.438) rotate(90)" fill="#ffc9b7"/>
+        <path id="Polygon_16" data-name="Polygon 16" d="M24.634,0,49.269,25.066H0Z" transform="translate(126.628 226.812) rotate(45)" fill="#fc865f"/>
+        <path id="Path_175" data-name="Path 175" d="M1.381,0,26.015,25.066,0,24.993Z" transform="translate(143.07 243.255) rotate(45)" fill="#1a1955"/>
+        <path id="Path_176" data-name="Path 176" d="M0,0,24.634,25.066Z" transform="translate(144.047 244.231) rotate(45)" fill="#262467"/>
+        <path id="Polygon_18" data-name="Polygon 18" d="M24.633,0,49.265,23.72H0Z" transform="translate(92.281 256.375)" fill="#262467"/>
+        <path id="Path_178" data-name="Path 178" d="M85.5,0l25.183,25.066H85.644Z" transform="translate(31.534 255.749)" fill="#ffc9b7"/>
+        <circle id="Ellipse_13" data-name="Ellipse 13" cx="7.299" cy="7.299" r="7.299" transform="translate(137.897 274.621)" fill="#ff855d"/>
+      </g>
+      <g id="Group_45" data-name="Group 45" transform="translate(70 1)">
+        <g id="Group_44" data-name="Group 44" transform="translate(-5114 -9156)">
+          <path id="Path_169" data-name="Path 169" d="M5284,9492V9356h37v136Z" fill="#ffd1d5"/>
+          <path id="Path_170" data-name="Path 170" d="M5284,9356l17.188-35,17.8,34.984Z" fill="#e995a2"/>
+          <rect id="Rectangle_243" data-name="Rectangle 243" width="71" height="136" transform="translate(5319 9356)" fill="#ff855d"/>
+          <path id="Path_171" data-name="Path 171" d="M5301.167,9321h72.5l16.3,35.016-71,.016Z" fill="#262467"/>
+        </g>
+        <rect id="Rectangle_244" data-name="Rectangle 244" width="49" height="29" transform="translate(215 227)" fill="#a15137"/>
+        <rect id="Rectangle_245" data-name="Rectangle 245" width="49" height="29" transform="translate(215 287)" fill="#a15137"/>
+      </g>
+      <g id="Group_46" data-name="Group 46" transform="translate(-12.752 91.5)">
+        <g id="Group_44-2" data-name="Group 44" transform="translate(170 165)">
+          <path id="Path_169-2" data-name="Path 169" d="M5284,9413.953V9356h23.307v57.953Z" transform="translate(-5284 -9333.953)" fill="#ffd1d5"/>
+          <path id="Path_170-2" data-name="Path 170" d="M5284,9343.047,5294.827,9321l11.21,22.037Z" transform="translate(-5284 -9321)" fill="#e995a2"/>
+          <path id="Path_172" data-name="Path 172" d="M-.259-.406,44.21-.5,44,58H0Z" transform="translate(22.386 22.5)" fill="#ff855d"/>
+          <path id="Path_171-2" data-name="Path 171" d="M5301.167,9321h45.669l10.269,22.057-44.724.01Z" transform="translate(-5290.353 -9321)" fill="#262467"/>
+        </g>
+        <rect id="Rectangle_244-2" data-name="Rectangle 244" width="31" height="18" transform="translate(198.386 204.5)" fill="#a15137"/>
+      </g>
+      <path id="Path_173" data-name="Path 173" d="M6497,9130.5l6.5,13.5v64H6497Z" transform="translate(-6257 -8872)" fill="#c47f85"/>
+    </g>
+  </g>
+</svg>
