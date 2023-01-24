@@ -4,15 +4,57 @@ import SplashComponent from './src/Infrastructure/component/SplashScreen/SplashS
 import {Provider} from 'react-redux';
 import store from './src/application/store/index';
 import AuthNavigator from './src/Infrastructure/navigation/AuthNavigator';
+import DrawerNavigator from './src/Infrastructure/navigation/DrawerNavigator';
+import {
+  getAuthToken,
+  getAuthTokenExpiry,
+  setAuthToken,
+  setAuthTokenExpiry,
+  setLogin,
+  setLoginID,
+} from './src/Infrastructure/utils/storageUtility';
+import {AuthContext} from './src/Infrastructure/utils/context';
 const App = () => {
   const [spalshTime, setSplashTime] = useState(true);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [userToken, setUserToken] = useState('');
+  const authContext = React.useMemo(
+    () => ({
+      signIn: () => {
+        setIsLoading(true);
+        setLogin(true);
+      },
+      signOut: () => {
+        setUserToken(false);
+        setIsLoading(false);
+        setAuthToken('');
+        setLogin(false);
+        setAuthTokenExpiry('');
+        setLoginID('');
+      },
+    }),
+    [],
+  );
+  const checkLoginStatus = React.useMemo(async () => {
+    const token = await getAuthToken();
+    const tokenEx = await getAuthTokenExpiry();
+    const expirationTime = tokenEx * 1000 - 60000;
+    let currDate = Date.now();
+    if (expirationTime < currDate) {
+      setUserToken('');
+      setIsLoading(false);
+      setAuthToken('');
+    } else {
+      setIsLoading(false);
+      setUserToken(token);
+    }
+  }, []);
   useEffect(() => {
+    checkLoginStatus;
     setTimeout(() => {
       setSplashTime(false);
     }, 2000);
   }, []);
-
   if (spalshTime) {
     return (
       <NavigationContainer>
@@ -24,7 +66,9 @@ const App = () => {
     <>
       <Provider store={store}>
         <NavigationContainer>
-          <AuthNavigator />
+          <AuthContext.Provider value={authContext}>
+            {userToken || isLoading ? <DrawerNavigator /> : <AuthNavigator />}
+          </AuthContext.Provider>
         </NavigationContainer>
       </Provider>
     </>

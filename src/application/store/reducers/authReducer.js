@@ -1,4 +1,4 @@
-import {LOGIN, FAIL, SUCCESS} from '../action-types';
+import {LOGIN, FAIL, SUCCESS, COUNYTRYLIST} from '../action-types';
 
 const initialState = {
   isUserValid: false,
@@ -14,6 +14,17 @@ export default (state = initialState, {type, payload}) => {
     case `${LOGIN}_${SUCCESS}`:
       return {...state, isUserValid: true, userInfo: {...payload}};
     case `${LOGIN}_${FAIL}`:
+      return {
+        ...state,
+        isAuthenticating: false,
+        isUserValid: false,
+        error: {...payload},
+      };
+    case COUNYTRYLIST:
+      return {...state, isAuthenticating: true};
+    case `${COUNYTRYLIST}_${SUCCESS}`:
+      return {...state, isUserValid: true, CountryList: {...payload}};
+    case `${COUNYTRYLIST}_${FAIL}`:
       return {
         ...state,
         isAuthenticating: false,

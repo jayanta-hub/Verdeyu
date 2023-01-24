@@ -16,12 +16,16 @@ export const CustomInput = props => {
       autoCorrect={false}
       style={props.style}
       secureTextEntry={props.secureTextEntry || false}
+      keyboardType={props.keyboardType}
     />
   );
 };
 export const CustomButton = props => {
   return (
-    <TouchableOpacity style={props.buttonStyle} onPress={props.onPressHandler}>
+    <TouchableOpacity
+      style={props.buttonStyle}
+      onPress={props.onPressHandler}
+      disabled={props.disabled}>
       <Text style={props.buttonTextStyle}>{props.buttonText}</Text>
     </TouchableOpacity>
   );

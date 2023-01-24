@@ -22,7 +22,14 @@ import {useFormik} from 'formik';
 import {ToastMessage} from '../../../Infrastructure/component/ToastMessage/ToastMessage';
 import * as yup from 'yup';
 import {logIn} from '../../../application/store/actions/auth';
-
+import {
+  setAuthToken,
+  setAuthTokenExpiry,
+  setLoginID,
+  setOrgId,
+  setUserID,
+} from '../../../Infrastructure/utils/storageUtility';
+import {AuthContext} from '../../../Infrastructure/utils/context';
 const loginValidationSchema = yup.object().shape({
   userID: yup
     .string()
@@ -33,7 +40,29 @@ const loginValidationSchema = yup.object().shape({
 const Login = props => {
   const navigation = useNavigation();
   const [status, setStatus] = useState(false);
-
+  const {signIn} = React.useContext(AuthContext);
+  const formSubmitHandler = async () => {
+    const payload = {
+      password: values.password,
+      username: values.userID,
+    };
+    await props
+      .authLogIn(payload)
+      .then(async res => {
+        console.log('login res ==>>>', res);
+        await setLoginID(res.data.username);
+        await setOrgId(res.data.orgId);
+        await setAuthToken(res.data.token);
+        await setUserID(res.data.userId);
+        await signIn();
+        await setAuthTokenExpiry(res.data.token);
+        ToastMessage(res.message.message);
+      })
+      .catch(err => {
+        console.log('error', err);
+        ToastMessage(err.errors[0].message);
+      });
+  };
   const {
     handleChange,
     handleBlur,
@@ -51,30 +80,6 @@ const Login = props => {
     onSubmit: () => formSubmitHandler(values),
     validationSchema: loginValidationSchema,
   });
-  const formSubmitHandler = async () => {
-    const payload = {
-      password: values.password,
-      username: values.userID,
-    };
-
-    await props
-      .authLogIn(payload)
-      .then(async res => {
-        console.log('login res ==>>>', res);
-        // setStatus(false);
-        setTimeout(() => {
-          ToastMessage(res.message.message);
-        }, 1);
-      })
-      .catch(async err => {
-        console.log('error', err);
-        // setStatus(false);
-
-        setTimeout(() => {
-          ToastMessage(err.errors[0].message);
-        }, 1);
-      });
-  };
   return (
     <>
       <KeyboardAvoidingView
@@ -149,10 +154,7 @@ const Login = props => {
                   buttonText="SIGN IN"
                   buttonStyle={styles.buttonWrapper}
                   buttonTextStyle={styles.buttonText}
-                  onPressHandler={
-                    () => handleSubmit()
-                    // navigation.navigate('CreateAccount')
-                  }
+                  onPressHandler={handleSubmit}
                 />
               </View>
               <View
@@ -200,7 +202,5 @@ const Login = props => {
 };
 const mapDispatchToProps = {
   authLogIn: payloadData => logIn(payloadData),
-  getAccountStatus: userName => getAccountStatus(userName),
-  updateAccountStatus: userName => updateAccountStatus(userName),
 };
 export default connect(null, mapDispatchToProps)(Login);

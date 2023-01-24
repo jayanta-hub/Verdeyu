@@ -68,132 +68,6 @@ export const getUserInfo = async () => {
   }
 };
 
-export const setBeneficiaryUserID = async value => {
-  console.log('set BeneficiaryID asyncStore = ', value);
-  try {
-    await AsyncStorage.setItem('@BeneficiaryID', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getBeneficiaryUserID = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@BeneficiaryID');
-    console.log('get BeneficiaryID asyncstore = ', JSON.parse(value));
-    if (value !== null) {
-      // value previously stored
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setBeneficiaryDetails = async value => {
-  console.log('BeneficiaryDetails asyncStore = ', JSON.stringify(value));
-  try {
-    await AsyncStorage.setItem('@BeneficiaryDetails', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getBeneficiaryDetails = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@BeneficiaryDetails');
-    console.log('get BeneficiaryDetails asyncstore = ', value);
-    if (value !== null) {
-      // value previously stored
-      return value;
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setCompanyId = async value => {
-  console.log('company in store func = ', value);
-  try {
-    await AsyncStorage.setItem('@companyId', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-  }
-};
-export const getCompanyId = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@companyId');
-    console.log('get companyId async login = ', value);
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setAttorneyId = async value => {
-  console.log('attorneyId in store func = ', value);
-  try {
-    await AsyncStorage.setItem('@attorneyId', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-  }
-};
-export const getAttorneyId = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@attorneyId');
-    console.log('get attorneyId async login = ', value);
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setAuthSurveyId = async value => {
-  console.log('setSurveyId in store func = ', value);
-  try {
-    await AsyncStorage.setItem('@surveyId', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-  }
-};
-export const getAuthSurveyId = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@surveyId');
-    console.log('get async getSurveyId = ', JSON.parse(value));
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setreferralCompanyId = async value => {
-  console.log('ReferralCompanyId in store func = ', value);
-  try {
-    await AsyncStorage.setItem('@referralCompanyId', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-  }
-};
-export const getreferralCompanyId = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@referralCompanyId');
-    console.log('get company async login Referral = ', value);
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
 export const setAuthTokenExpiry = async value => {
   const {exp} = await jwt_decode(value);
   console.log('exp--', exp);
@@ -286,50 +160,6 @@ export const getUserEmail = async () => {
   }
 };
 
-export const setUserType = async value => {
-  console.log('userType-----', value);
-  try {
-    await AsyncStorage.setItem('@userType', value);
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getUserType = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@userType');
-    if (value !== null) {
-      // value previously stored
-      return value;
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setBeneficiaryType = async value => {
-  console.log('BeneficaryMOC-----', value);
-  try {
-    await AsyncStorage.setItem('@BeneficaryMOC', value);
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getBeneficiaryType = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@BeneficaryMOC');
-    if (value !== null) {
-      // value previously stored
-      return value;
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
 export const setUserID = async value => {
   try {
     await AsyncStorage.setItem('@userID', JSON.stringify(value));
@@ -351,48 +181,6 @@ export const getUserID = async () => {
   }
 };
 
-export const setLogInFirst = async value => {
-  try {
-    await AsyncStorage.setItem('@isLogingFirst', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getLogInFirst = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@isLogingFirst');
-    if (value !== null) {
-      // value previously stored
-      return JSON.parse(value);
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
-export const setVisaStampingStatus = async value => {
-  try {
-    await AsyncStorage.setItem('@visaStampingStatus', JSON.stringify(value));
-  } catch (e) {
-    console.log('saving error: ', e);
-    // saving error
-  }
-};
-
-export const getVisaStampingStatus = async () => {
-  try {
-    const value = await AsyncStorage.getItem('@visaStampingStatus');
-    if (value !== null) {
-      // value previously stored
-      return value;
-    }
-  } catch (e) {
-    console.log('retrive error: ', e);
-  }
-};
-
 export const setLoginID = async value => {
   try {
     await AsyncStorage.setItem('@loginID', value);
@@ -408,6 +196,26 @@ export const getLoginID = async () => {
     if (value !== null) {
       // value previously stored
       return value;
+    }
+  } catch (e) {
+    console.log('retrive error: ', e);
+  }
+};
+export const setOrgId = async value => {
+  try {
+    await AsyncStorage.setItem('@OrgID', JSON.stringify(value));
+  } catch (e) {
+    console.log('saving error: ', e);
+    // saving error
+  }
+};
+
+export const getOrgId = async () => {
+  try {
+    const value = await AsyncStorage.getItem('@OrgID');
+    if (value !== null) {
+      // value previously stored
+      return JSON.parse(value);
     }
   } catch (e) {
     console.log('retrive error: ', e);

@@ -1,16 +1,16 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import {scale, width} from '../../../Infrastructure/utils/screenUtility';
+import {StyleSheet} from 'react-native';
 import colors from '../../../Infrastructure/assets/colors/colors';
+
+import {scale} from '../../../Infrastructure/utils/screenUtility';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.mainWhite,
+    backgroundColor: '#FFFFFF',
   },
   FooterText: {
     fontSize: scale(14),
     color: colors.VeryDark,
     fontFamily: 'Montserrat-Medium',
-    textAlign: 'justify',
   },
   svgWrapper: {
     flex: 1,
@@ -26,13 +26,6 @@ const styles = StyleSheet.create({
     fontSize: scale(12),
     color: colors.VeryDarkGray,
     fontFamily: 'Montserrat-Medium',
-    textAlign: 'justify',
-  },
-  LabelText: {
-    fontSize: scale(10),
-    color: colors.VeryDarkGray,
-    fontFamily: 'Montserrat-Medium',
-    textAlign: 'justify',
   },
   buttonText: {
     color: '#FFFFFF',
@@ -41,6 +34,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   buttonWrapper: {
+    // flex: 1,
     height: scale(42),
     width: '100%',
     alignItems: 'center',
@@ -50,45 +44,16 @@ const styles = StyleSheet.create({
   },
   InputStyle: {
     height: scale(30),
-    fontSize: scale(16),
-    fontFamily: 'Montserrat-SemiBold',
     color: colors.VeryDark,
     paddingLeft: scale(-2),
     borderBottomWidth: scale(1),
     borderColor: colors.LightGrayishBlue,
     padding: 0,
   },
-  placeholder: {
-    height: scale(30),
-    fontSize: scale(14),
-    fontFamily: 'Montserrat-Medium',
-    paddingLeft: scale(-2),
-    borderBottomWidth: scale(1),
-    borderColor: colors.LightGrayishBlue,
-    padding: 0,
-  },
   errorMessage: {
-    marginTop: scale(5),
     fontSize: scale(10),
     fontFamily: 'Montserrat-Medium',
     color: 'red',
-  },
-  inputWrapper: {
-    flexDirection: 'column',
-    marginTop: scale(15),
-  },
-  dropdown: {
-    marginTop: scale(5),
-    minHeight: scale(35),
-    width: scale(100),
-    borderRadius: scale(5),
-    borderColor: '#C3D0DE',
-    paddingVertical: -20,
-  },
-  radioTitle: {
-    fontFamily: 'SourceSansPro-Regular',
-    fontSize: scale(14),
-    color: '#4A4A4A',
   },
 });
 
