@@ -7,6 +7,8 @@ import {
 import PropTypes from 'prop-types';
 const OtpInput = props => {
   const {
+    pinCount,
+    bgColor,
     onSubmit,
     secureTextEntry,
     autoSubmit,
@@ -16,11 +18,7 @@ const OtpInput = props => {
   } = props;
   const inputRef = useRef();
   const [otp, setOtp] = useState(
-    new Array(
-      props.pinCount && props.pinCount <= 6 && props.pinCount >= 3
-        ? props.pinCount
-        : 4,
-    ).fill(''),
+    new Array(pinCount <= 6 && pinCount >= 3 ? pinCount : 4).fill(''),
   );
   const [activeOtpIndex, setActiveOtpIndex] = useState(0);
   const ChangeHandler = (e, index) => {
@@ -34,11 +32,9 @@ const OtpInput = props => {
     /**
      * * For AutoSubmit (After Fill All Input we Can call a Fun)
      */
-    index === props.pinCount - 1
-      ? onChageValue(newOtp.join('').toString())
-      : null;
+    index === pinCount - 1 ? onChageValue(newOtp.join('').toString()) : null;
     autoSubmit
-      ? index === props.pinCount - 1
+      ? index === pinCount - 1
         ? onSubmit()
           ? onSubmit(newOtp.join('').toString())
           : null
@@ -52,14 +48,8 @@ const OtpInput = props => {
     e.nativeEvent.key === 'Backspace' ? setActiveOtpIndex(index - 1) : null;
   };
   useEffect(() => {
-    setOtp(
-      new Array(
-        props.pinCount && props.pinCount <= 6 && props.pinCount >= 3
-          ? props.pinCount
-          : 4,
-      ).fill(''),
-    );
-  }, [props.pinCount]);
+    setOtp(new Array(pinCount <= 6 && pinCount >= 3 ? pinCount : 4).fill(''));
+  }, [pinCount]);
   useEffect(() => {
     inputRef.current?.focus();
   }, [activeOtpIndex]);
@@ -93,7 +83,7 @@ const OtpInput = props => {
                       ? 0
                       : 4,
                   ),
-                  backgroundColor: props.bgColor ? props.bgColor : '#FFFFFF',
+                  backgroundColor: bgColor,
                   marginHorizontal:
                     Platform.isPad || guidelineBaseWidth > 500
                       ? scale(40)
@@ -115,12 +105,8 @@ const OtpInput = props => {
                   onKeyPress={e => OnKeyHandler(e, index)}
                   secureTextEntry={secureTextEntry}
                   style={{
-                    height: scale(
-                      props.pinCount > 4 && props.pinCount < 7 ? 40 : 50,
-                    ),
-                    width: scale(
-                      props.pinCount > 4 && props.pinCount < 7 ? 40 : 50,
-                    ),
+                    height: scale(pinCount > 4 && pinCount < 7 ? 40 : 50),
+                    width: scale(pinCount > 4 && pinCount < 7 ? 40 : 50),
                     margin: scale(4),
                     textAlign: 'center',
                     fontSize: scale(22),
@@ -149,17 +135,19 @@ OtpInput.propTypes = {
   mode: PropTypes.string,
   borderRadius: PropTypes.number,
   onChageValue: PropTypes.func,
+  bgColor: PropTypes.string,
 };
 
 OtpInput.defaultProps = {
   /**
    * ? not required, this prop mentioned as required in propTypes
    */
-  // pinCount: 0,
+  pinCount: 4,
   secureTextEntry: false,
   autoSubmit: false,
   mode: 'rectangle',
   borderRadius: 4,
+  bgColor: '#FFFFFF',
   onChageValue: () => {},
 };
 export default OtpInput;

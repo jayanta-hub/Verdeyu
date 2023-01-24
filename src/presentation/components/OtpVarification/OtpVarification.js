@@ -93,7 +93,7 @@ const OtpVarification = props => {
               bgColor="#EBEAEE"
               mode="flat"
               onSubmit={onSubmitHanler}
-              //   autoSubmit={true}
+              autoSubmit={true}
               onChageValue={setOtpValue}
             />
             <View
