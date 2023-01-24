@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {SafeAreaView, ScrollView, RefreshControl} from 'react-native';
+import {SafeAreaView, ScrollView, RefreshControl, View} from 'react-native';
 import {scale} from '../../../Infrastructure/utils/screenUtility';
 import {useNavigation} from '@react-navigation/native';
 import Loader from '../../../Infrastructure/component/Loader/Loader';
+import ComingSoon from '../../../Infrastructure/component/ComingSoon/ComingSoon';
 const TimeLineComponent = props => {
   const navigation = useNavigation();
   const [status, setStatus] = useState(false);
@@ -23,7 +24,9 @@ const TimeLineComponent = props => {
             onRefresh={onRefresh}
             tintColor="#00A0DA"
           />
-        }></ScrollView>
+        }>
+        <ComingSoon />
+      </ScrollView>
     </SafeAreaView>
   );
 };
