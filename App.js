@@ -14,6 +14,9 @@ import {
   setLoginID,
 } from './src/Infrastructure/utils/storageUtility';
 import {AuthContext} from './src/Infrastructure/utils/context';
+import {View, Text} from 'react-native';
+// import LikeAndCommentCountMethod from 'reusable/LikeAndCommentCountMethod';
+
 const App = () => {
   const [spalshTime, setSplashTime] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -68,6 +71,10 @@ const App = () => {
         <NavigationContainer>
           <AuthContext.Provider value={authContext}>
             {userToken || isLoading ? <DrawerNavigator /> : <AuthNavigator />}
+            <View>
+              {/* <Text>{LikeAndCommentCountMethod(101232)}</Text> */}
+              <Text>Mobile App Testing</Text>
+            </View>
           </AuthContext.Provider>
         </NavigationContainer>
       </Provider>
