@@ -17,7 +17,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-// import LikeAndCommentCountMethod from 'reusable/LikeAndCommentCountMethod';
+import LikeAndCommentCountMethod from 'reusable/LikeAndCommentCountMethod';
 
 // const LikeAndCommentCountMethod = React.lazy(() =>
 //   import('reusable/LikeAndCommentCountMethod'),
@@ -91,7 +91,7 @@ const App = () => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
             <View>
-              {/* <Text>" "{LikeAndCommentCountMethod(101782)}</Text> */}
+              <Text>" "{LikeAndCommentCountMethod(101782)}</Text>
             </View>
           </Section>
           {/* <LearnMoreLinks /> */}

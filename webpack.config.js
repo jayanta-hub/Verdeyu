@@ -2,7 +2,8 @@ const path = require('path');
 
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const deps = require('./package.json').dependencies;
 const appDirectory = path.resolve(__dirname);
 const {presets} = require(`${appDirectory}/babel.config.js`);
 
@@ -72,6 +73,29 @@ module.exports = {
     ],
   },
   plugins: [
+    new ModuleFederationPlugin({
+      name: 'verdeyu',
+      filename: 'remoteEntry.js',
+      remotes: {
+        reusable: 'reusable@http://localhost:3002/remoteEntry.js',
+      },
+      exposes: {},
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          eager: true,
+          strictVersion: true,
+          requiredVersion: deps.react,
+        },
+        'react-dom': {
+          singleton: true,
+          eager: true,
+          strictVersion: true,
+          requiredVersion: deps['react-dom'],
+        },
+      },
+    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'index.html'),
     }),
