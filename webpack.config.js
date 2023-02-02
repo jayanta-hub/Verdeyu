@@ -18,6 +18,8 @@ const babelLoaderConfiguration = {
   include: [
     path.resolve(__dirname, 'index.web.js'), // Entry to your application
     path.resolve(__dirname, './App.web.js'), // Change this to your main App file
+    path.resolve(__dirname, 'index.android.js'), // Entry to your application
+    path.resolve(__dirname, './App.android.js'), // Change this to your main App file
     path.resolve(__dirname, 'src'),
     ...compileNodeModules,
   ],
@@ -26,6 +28,7 @@ const babelLoaderConfiguration = {
     options: {
       cacheDirectory: true,
       presets,
+      // Re-write paths to import only the modules needed by the app
       plugins: ['react-native-web'],
     },
   },
@@ -60,7 +63,16 @@ module.exports = {
     filename: 'rnw_blogpost.bundle.js',
   },
   resolve: {
-    extensions: ['.web.tsx', '.web.ts', '.tsx', '.ts', '.web.js', '.js'],
+    extensions: [
+      '.web.tsx',
+      '.web.ts',
+      '.tsx',
+      '.ts',
+      '.web.js',
+      '.android.js',
+      '.js',
+      '.jsx',
+    ],
     alias: {
       'react-native$': 'react-native-web',
     },

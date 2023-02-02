@@ -66,6 +66,12 @@
     "webpack-dev-server": "^4.11.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native-web",
+    "moduleFileExtentions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
