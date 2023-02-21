@@ -37,6 +37,7 @@
     "redux-axios-middleware": "^4.0.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "rn-otp-inputs": "^1.0.13",
     "yup": "^0.32.11"
   },
   "devDependencies": {
